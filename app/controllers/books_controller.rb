@@ -15,7 +15,7 @@ class BooksController < ApplicationController
   # GET /books/new
   def new
 
-    @book = Book.has_contents.random_record.first
+    @book = Book.has_contents.random_order.first
   end
 
   # GET /books/1/edit
@@ -70,6 +70,6 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:title, :asin, :node_id, :browsenode, :author, :manufacture, :url, :amount, :contents, :pre_processed_contents, :difficultyπ)
+      params.require(:book).permit(:title, :asin, :node_id, :browsenode, :author, :manufacture, :url, :amount, :contents, :pre_processed_contents, :difficulty)
     end
 end
