@@ -6,7 +6,7 @@ class CreateBooks < ActiveRecord::Migration
       t.integer :node_id
       t.text :browsenode
       t.text :author
-      t.text :manufacture
+      t.text :manufacturer
       t.text :url
       t.integer :amount
       t.text :contents
