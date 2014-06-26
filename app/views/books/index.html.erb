@@ -1,5 +1,9 @@
 <h1>Listing books</h1>
 
+<% if @books.size == 0 %>
+<p>書籍がまだ評価されていません</p>
+<% end %>
+
 <table>
   <thead>
     <tr>

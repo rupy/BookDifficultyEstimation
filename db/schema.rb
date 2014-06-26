@@ -11,15 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140626041220) do
+ActiveRecord::Schema.define(version: 20140626052944) do
 
   create_table "books", force: true do |t|
+    t.text    "title"
+    t.text    "asin"
+    t.integer "node_id"
+    t.text    "browsenode"
+    t.text    "author"
+    t.text    "manufacturer"
+    t.text    "url"
+    t.integer "amount"
+    t.text    "contents"
+    t.text    "pre_processed_contents"
+    t.integer "difficulty"
+  end
+
+  create_table "books_back", force: true do |t|
     t.text     "title"
     t.text     "asin"
     t.integer  "node_id"
     t.text     "browsenode"
     t.text     "author"
-    t.text     "manufacturer"
+    t.text     "manufacture"
     t.text     "url"
     t.integer  "amount"
     t.text     "contents"

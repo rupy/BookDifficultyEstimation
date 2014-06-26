@@ -1,12 +1,10 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
-  scope :estimated, where("difficulty is not null")
-
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    @books = Book.estimated
   end
 
   # GET /books/1
@@ -16,7 +14,8 @@ class BooksController < ApplicationController
 
   # GET /books/new
   def new
-    @book = Book.new
+
+    @book = Book.has_contents.random_record.first
   end
 
   # GET /books/1/edit
@@ -71,6 +70,6 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:title, :asin, :node_id, :browsenode, :author, :manufacture, :url, :amount, :contents, :pre_processed_contents)
+      params.require(:book).permit(:title, :asin, :node_id, :browsenode, :author, :manufacture, :url, :amount, :contents, :pre_processed_contents, :difficultyπ)
     end
 end
