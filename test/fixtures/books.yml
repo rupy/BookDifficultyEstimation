@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyText
+  asin: MyText
+  node_id: 1
+  browsenode: MyText
+  author: MyText
+  manufacture: MyText
+  url: MyText
+  amount: 1
+  contents: MyText
+  pre_processed_contents: MyText
+
+two:
+  title: MyText
+  asin: MyText
+  node_id: 1
+  browsenode: MyText
+  author: MyText
+  manufacture: MyText
+  url: MyText
+  amount: 1
+  contents: MyText
+  pre_processed_contents: MyText

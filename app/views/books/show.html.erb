@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @book.title %>
+</p>
+
+<p>
+  <strong>Asin:</strong>
+  <%= @book.asin %>
+</p>
+
+<p>
+  <strong>Node:</strong>
+  <%= @book.node_id %>
+</p>
+
+<p>
+  <strong>Browsenode:</strong>
+  <%= @book.browsenode %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @book.author %>
+</p>
+
+<p>
+  <strong>Manufacture:</strong>
+  <%= @book.manufacture %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @book.url %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @book.amount %>
+</p>
+
+<p>
+  <strong>Contents:</strong>
+  <%= @book.contents %>
+</p>
+
+<p>
+  <strong>Pre processed contents:</strong>
+  <%= @book.pre_processed_contents %>
+</p>
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>
