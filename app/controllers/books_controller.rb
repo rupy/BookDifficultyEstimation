@@ -42,11 +42,12 @@ class BooksController < ApplicationController
   # PATCH/PUT /books/1.json
   def update
     respond_to do |format|
+      # 短絡評価
       if @book.update(book_params)
-        format.html { redirect_to @book, notice: 'Book was successfully updated.' }
+        format.html { redirect_to new_book_url , notice: 'Book was successfully updated.' }
         format.json { render :show, status: :ok, location: @book }
       else
-        format.html { render :edit }
+        format.html { render :new }
         format.json { render json: @book.errors, status: :unprocessable_entity }
       end
     end

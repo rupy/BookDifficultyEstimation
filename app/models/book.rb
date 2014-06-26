@@ -8,4 +8,6 @@ class Book < ActiveRecord::Base
 
   scope :has_contents, -> { where("contents IS NOT ''") }
 
+  validates :difficulty, inclusion: { in: 1..4}
+
 end

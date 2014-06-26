@@ -1,4 +1,4 @@
-<h1>Listing books</h1>
+<h1>難易度付与済み書籍</h1>
 
 <% if @books.size == 0 %>
 <p>書籍がまだ評価されていません</p>
@@ -7,16 +7,9 @@
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Asin</th>
-      <th>Node</th>
-      <th>Browsenode</th>
-      <th>Author</th>
-      <th>Manufacturer</th>
-      <th>Url</th>
-      <th>Amount</th>
-      <th>Contents</th>
-      <th>Pre processed contents</th>
+      <th>書籍名</th>
+      <th>目次</th>
+      <th>難易度</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -25,15 +18,8 @@
     <% @books.each do |book| %>
       <tr>
         <td><%= book.title %></td>
-        <td><%= book.asin %></td>
-        <td><%= book.node_id %></td>
-        <td><%= book.browsenode %></td>
-        <td><%= book.author %></td>
-        <td><%= book.manufacturer %></td>
-        <td><%= book.url %></td>
-        <td><%= book.amount %></td>
-        <td><%= book.contents %></td>
         <td><%= book.pre_processed_contents %></td>
+        <td><%= book.difficulty %></td>
         <td><%= link_to 'Show', book %></td>
         <td><%= link_to 'Edit', edit_book_path(book) %></td>
         <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -44,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Book', new_book_path %>
+<%= link_to '新しく難易度を付与する', new_book_path %>
