@@ -1,5 +1,7 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
+  before_action :set_count
+  before_action :set_distribution
 
   # GET /books
   # GET /books.json
@@ -67,6 +69,16 @@ class BooksController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_book
       @book = Book.find(params[:id])
+    end
+
+    def set_count
+      @count_estimated = Book.estimated.count
+      @count_not_estimated = Book.not_estimated.count
+      @count_all = Book.all.count
+    end
+
+    def set_distribution
+      @distribution_array = (1..4).to_a.map{|i| Book.distribution(i)}
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

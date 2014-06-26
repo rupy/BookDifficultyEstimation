@@ -1,4 +1,23 @@
-<h1>Editing book</h1>
+<p id="notice"><%= notice %></p>
+
+<%= show_count %><br>
+<%= show_distribution %>
+
+<h1>難易度変更</h1>
+<h2><%= link_to @book.title, @book.url %></h2>
+<ul>
+	<li>ASIN: <%= @book.asin %></li>
+	<li>NodeID: <%= @book.node_id %></li>
+	<li>著者: <%= @book.author %></li>
+	<li>BrowseNode: <%= @book.browsenode %></li>
+	<li>出版社: <%= @book.manufacturer %></li>
+	<li>価格: <%= @book.amount %>円</li>
+</ul>
+
+<h3>目次</h3>
+<p>
+<%= simple_format(@book.pre_processed_contents) %>
+</p>
 
 <%= render 'form' %>
 
