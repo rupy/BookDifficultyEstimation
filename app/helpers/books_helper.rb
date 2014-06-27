@@ -5,6 +5,6 @@ module BooksHelper
   end
 
   def show_distribution
-  	"difficulty: 1,2,3,4 / " + @distribution_array.join(",")
+    "difficulty dsitribution: " + @distribution_array.map{|d| "(#{d[0]}, #{d[1]})" }.join(", ")
   end
 end

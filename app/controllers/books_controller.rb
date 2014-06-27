@@ -78,7 +78,7 @@ class BooksController < ApplicationController
     end
 
     def set_distribution
-      @distribution_array = (1..4).to_a.map{|i| Book.distribution(i)}
+      @distribution_array = Book.distribution
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
