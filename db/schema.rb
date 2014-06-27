@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140626052944) do
+ActiveRecord::Schema.define(version: 20140627161328) do
 
   create_table "books", force: true do |t|
     t.text    "title"
@@ -25,6 +25,9 @@ ActiveRecord::Schema.define(version: 20140626052944) do
     t.text    "contents"
     t.text    "pre_processed_contents"
     t.integer "difficulty"
+    t.text    "image_url"
+    t.integer "image_height"
+    t.integer "image_width"
   end
 
   create_table "books_back", force: true do |t|
