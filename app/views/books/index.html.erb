@@ -1,3 +1,5 @@
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+
 <h1>難易度付与済み書籍</h1>
 
 <% if @books.size == 0 %>
@@ -6,6 +8,8 @@
 
 <%= show_count %><br>
 <%= show_distribution %>
+
+<%= column_chart @distribution_array %>
 
 <table>
   <thead>
