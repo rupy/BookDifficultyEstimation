@@ -13,7 +13,11 @@
 
   <div class="field">
     <%= f.label :difficulty %><br>
-    <%= f.number_field :difficulty %>
+    <%= f.radio_button(:difficulty,1,{:accesskey => "1"}) %>１入門<br>
+    <%= f.radio_button(:difficulty,2,{:accesskey => "2"}) %>２初級<br>
+    <%= f.radio_button(:difficulty,3,{:accesskey => "3"}) %>３中級<br>
+    <%= f.radio_button(:difficulty,4,{:accesskey => "4"}) %>４上級<br>
+
   </div>
   <div class="actions">
     <%= f.submit %>
