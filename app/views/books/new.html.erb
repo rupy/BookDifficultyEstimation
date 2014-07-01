@@ -5,6 +5,19 @@
 
 <h1>難易度付与</h1>
 <h2><%= link_to @book.title, @book.url %></h2>
+<% unless @book.image_url.nil? %>
+  <%= image_tag(@book.image_url, width: @book.image_width, height: @book.image_height) %>
+<% else %>
+  <p>画像がありません</p>
+<% end %>
+
+<h3>目次</h3>
+<p>
+<%= simple_format(@book.pre_processed_contents) %>
+</p>
+
+<%= render 'form' %>
+
 <ul>
 	<li>ASIN: <%= @book.asin %></li>
 	<li>NodeID: <%= @book.node_id %></li>
@@ -14,10 +27,5 @@
 	<li>価格: <%= @book.amount %>円</li>
 </ul>
 
-<h3>目次</h3>
-<p>
-<%= simple_format(@book.pre_processed_contents) %>
-</p>
-<%= render 'form' %>
 
 <%= link_to 'Back', books_path %>
