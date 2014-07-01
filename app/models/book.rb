@@ -15,7 +15,11 @@ class Book < ActiveRecord::Base
   validates :difficulty, inclusion: { in: 1..4 }
 
   def self.distribution
-  	estimated.group('difficulty').count.map{|row| [row[0], row[1]]}
+  	distribution = estimated.group('difficulty').count.map{|row| [row[0], row[1]]}
+    4.times do |i|
+      distribution.push([i + 1, 0]) unless distribution.assoc(i + 1)
+    end
+    distribution
   end
 
 end
